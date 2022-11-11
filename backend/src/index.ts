@@ -14,6 +14,8 @@ app.get('/api', (req: Request, res: Response) => {
 });
 
 /*
+
+
 app.post('/api/sendToAirtable', (req: Request, res: Response) => {
   res.json({"hello from vercel!"});
 });
