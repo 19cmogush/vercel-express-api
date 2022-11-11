@@ -14,13 +14,9 @@ app.get('/api', (req, res) => {
     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     res.end(`Hello! Fetch one item: <a href="${path}">${path}</a>`);
 });
-/*
-
-
-app.post('/api/sendToAirtable', (req: Request, res: Response) => {
-  res.json({"hello from vercel!"});
+app.post('/api/sendToAirtable', (req, res) => {
+    res.json({ "msg": "hello from vercel!" });
 });
-*/
 app.get('/api/item/:itemId', (req, res) => {
     const { itemId } = req.params;
     res.json({ itemId });
