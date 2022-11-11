@@ -13,6 +13,10 @@ app.get('/api', (req: Request, res: Response) => {
   res.end(`Hello! Fetch one item: <a href="${path}">${path}</a>`);
 });
 
+app.post('/api/sendToAirtable', (req: Request, res: Response) => {
+  res.json({"hello from vercel!"});
+});
+
 app.get('/api/item/:itemId', (req: Request, res: Response) => {
   const { itemId } = req.params;
   res.json({ itemId });
