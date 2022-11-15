@@ -67,6 +67,7 @@ const sendToAirtable = (req, res) => __awaiter(void 0, void 0, void 0, function*
     //   });
     //   return res.json(user);
     // };
+    res.sendStatus(200);
 });
 exports.sendToAirtable = sendToAirtable;
 //# sourceMappingURL=controllers.js.map
