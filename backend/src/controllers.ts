@@ -64,4 +64,5 @@ export const sendToAirtable = async (req: Request, res: Response) => {
 
   //   return res.json(user);
   // };
+  return res.json('success!');
 };

@@ -28,11 +28,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const userController = __importStar(require("./controllers"));
+const cors_1 = __importDefault(require("cors"));
 // import cors from "cors"; // for CORS setup, usage: app.use(cors());
 var bodyParser = require('body-parser');
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3030; // default port to listen
 app.use(bodyParser.json());
+app.use((0, cors_1.default)());
 app.get('/api', (req, res) => {
     const randomId = `${Math.random()}`.slice(2);
     const path = `/api/item/${randomId}`;

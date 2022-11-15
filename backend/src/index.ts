@@ -1,6 +1,7 @@
 import express from 'express';
 import { Request, Response } from 'express';
 import * as userController from './controllers';
+import cors from 'cors';
 
 // import cors from "cors"; // for CORS setup, usage: app.use(cors());
 var bodyParser = require('body-parser');
@@ -8,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 3030; // default port to listen
 
 app.use(bodyParser.json());
-
+app.use(cors());
 app.get('/api', (req: Request, res: Response) => {
   const randomId = `${Math.random()}`.slice(2);
   const path = `/api/item/${randomId}`;
