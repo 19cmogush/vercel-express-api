@@ -6,7 +6,6 @@ import Airtable, { Base } from 'airtable';
  * @route POST /send-to-airtable
  */
 export const sendToAirtable = async (req: Request, res: Response) => {
-  /*
   const Airtable = require('airtable');
   const base = new Airtable({ apiKey: 'keyCIWaCgtovfq4fn' }).base('appiWMugRGpJ4p3KS');
   if (req.body.startFireCamp == '') {
@@ -55,10 +54,9 @@ export const sendToAirtable = async (req: Request, res: Response) => {
       });
     }
   );
-  */
 
-  await send(req);
-  res.sendStatus(200);
+  //await send(req);
+  //res.sendStatus(200);
 };
 
 async function send(req: Request) {
