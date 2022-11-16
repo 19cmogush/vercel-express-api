@@ -1,6 +1,7 @@
 import express from 'express';
 import { Request, Response } from 'express';
-import * as userController from './controllers';
+import * as userController from './controllers/airtableController';
+import * as contactController from './controllers/contactController';
 import cors from 'cors';
 
 // import cors from "cors"; // for CORS setup, usage: app.use(cors());
@@ -19,6 +20,8 @@ app.get('/api', (req: Request, res: Response) => {
 });
 
 app.post('/api/sendToAirtable', userController.sendToAirtable);
+
+app.post('/api/sendContact', contactController.sendContact);
 
 app.get('/api/item/:itemId', (req: Request, res: Response) => {
   const { itemId } = req.params;

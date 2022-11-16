@@ -27,7 +27,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const userController = __importStar(require("./controllers"));
+const userController = __importStar(require("./controllers/airtableController"));
+const contactController = __importStar(require("./controllers/contactController"));
 const cors_1 = __importDefault(require("cors"));
 // import cors from "cors"; // for CORS setup, usage: app.use(cors());
 var bodyParser = require('body-parser');
@@ -43,6 +44,7 @@ app.get('/api', (req, res) => {
     res.end(`Hello! Fetch one item: <a href="${path}">${path}</a>`);
 });
 app.post('/api/sendToAirtable', userController.sendToAirtable);
+app.post('/api/sendContact', contactController.sendContact);
 app.get('/api/item/:itemId', (req, res) => {
     const { itemId } = req.params;
     res.json({ itemId });
