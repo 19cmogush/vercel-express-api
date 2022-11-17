@@ -5,7 +5,7 @@ const transporter = nodemailer.createTransport({
   host: 'smtp.zoho.com',
   auth: {
     user: 'cmogush@zohomail.com',
-    pass: '@FotmmDefaultPass12'
+    pass: process.env.EMAIL_PASS
   }
 });
 
