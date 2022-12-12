@@ -21,7 +21,7 @@ type Formdata = {
 function mailData(data: Formdata) {
   return {
     from: 'cmogush@zohomail.com', // sender address
-    to: 'miraclemilementors@gmail.com',
+    to: 'cmogush19@gmail.com',
     subject: `Contact Request from ${data.name}`,
     text: `${data.message}`,
     html: `

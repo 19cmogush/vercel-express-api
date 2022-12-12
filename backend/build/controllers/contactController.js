@@ -24,7 +24,7 @@ var smtpTransport = nodemailer_1.default.createTransport({
 function mailData(data) {
     return {
         from: 'cmogush@zohomail.com',
-        to: 'miraclemilementors@gmail.com',
+        to: 'cmogush19@gmail.com',
         subject: `Contact Request from ${data.name}`,
         text: `${data.message}`,
         html: `
