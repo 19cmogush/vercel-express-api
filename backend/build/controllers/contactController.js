@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendContact = void 0;
 const nodemailer_1 = __importDefault(require("nodemailer"));
-const transporter = nodemailer_1.default.createTransport({
+var smtpTransport = nodemailer_1.default.createTransport({
     host: 'smtp.zoho.com',
     auth: {
         user: 'cmogush@zohomail.com',
@@ -29,7 +29,7 @@ function mailData(data) {
 const sendContact = (req, res) => {
     // console.log("Request:\n" + req)
     console.log(req.body);
-    transporter.sendMail(mailData(req.body), function (err, info) {
+    smtpTransport.sendMail(mailData(req.body), function (err, info) {
         if (err) {
             console.log('ERROR details:');
             console.log(err);

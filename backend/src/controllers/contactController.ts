@@ -1,9 +1,8 @@
 import nodemailer from 'nodemailer';
 import { Request, Response, NextFunction } from 'express';
+import Mail from 'nodemailer/lib/mailer';
 
-
-
-const transporter = nodemailer.createTransport({
+var smtpTransport = nodemailer.createTransport({
   host: 'smtp.zoho.com',
   auth: {
     user: 'cmogush@zohomail.com',
@@ -37,7 +36,7 @@ function mailData(data: Formdata) {
 export const sendContact = (req: Request, res: Response) => {
   // console.log("Request:\n" + req)
   console.log(req.body);
-  transporter.sendMail(mailData(req.body as Formdata), function (err: any, info: any) {
+  smtpTransport.sendMail(mailData(req.body as Formdata), function (err: any, info: any) {
     if (err) {
       console.log('ERROR details:');
       console.log(err);
