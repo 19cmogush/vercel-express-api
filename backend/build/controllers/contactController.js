@@ -18,14 +18,13 @@ var smtpTransport = nodemailer_1.default.createTransport({
     host: 'smtp.zoho.com',
     auth: {
         user: 'cmogush@zohomail.com',
-        pass: '@FotmmDefaultPass12'
-        //process.env.EMAIL_PASS
+        pass: process.env.EMAIL_PASS
     }
 });
 function mailData(data) {
     return {
         from: 'cmogush@zohomail.com',
-        to: 'cmogush19@gmail.com@',
+        to: 'miraclemilementors@gmail.com',
         subject: `Contact Request from ${data.name}`,
         text: `${data.message}`,
         html: `
