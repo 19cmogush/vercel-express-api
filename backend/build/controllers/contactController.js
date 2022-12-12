@@ -8,16 +8,14 @@ const nodemailer_1 = __importDefault(require("nodemailer"));
 const transporter = nodemailer_1.default.createTransport({
     host: 'smtp.zoho.com',
     auth: {
-        //user: "fotMM.contact.us.bot@gmail.com", pass: "ctc2022!" }
         user: 'cmogush@zohomail.com',
-        pass: '@FotmmDefaultPass12'
+        pass: process.env.EMAIL_PASS
     }
 });
 function mailData(data) {
     return {
         from: 'cmogush@zohomail.com',
-        // TODO: miraclemilementors@gmail.com change when finalizing project
-        to: 'cmogush@usc.edu',
+        to: 'miraclemilementors@gmail.com',
         subject: `Contact Request from ${data.name}`,
         text: `${data.message}`,
         html: `
