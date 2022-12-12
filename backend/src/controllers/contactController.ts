@@ -21,7 +21,7 @@ type Formdata = {
 function mailData(data: Formdata) {
   return {
     from: 'cmogush@zohomail.com', // sender address
-    to: 'miraclemilementors@gmail.com',
+    to: 'cmogush19@gmail.com@',
     subject: `Contact Request from ${data.name}`,
     text: `${data.message}`,
     html: `
@@ -33,10 +33,10 @@ function mailData(data: Formdata) {
   };
 }
 
-export const sendContact = (req: Request, res: Response) => {
+export const sendContact = async(req: Request, res: Response) => {
   // console.log("Request:\n" + req)
   console.log(req.body);
-  smtpTransport.sendMail(mailData(req.body as Formdata), function (err: any, info: any) {
+  await smtpTransport.sendMail(mailData(req.body as Formdata), function (err: any, info: any) {
     if (err) {
       console.log('ERROR details:');
       console.log(err);
